@@ -2,32 +2,32 @@
 <div [hidden]="submitted">
     <form #detailUserForm="ngForm">
       <div class="form-group">
-        <label for="firstname">First Name</label>
-        <input type="text" class="form-control" id="firstname" required
-        [(ngModel)]="user.firstname" name="firstname" #firstname="ngModel">
-        <div [hidden]="firstname.valid || firstname.pristine"
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required
+        [(ngModel)]="user.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
-            First Name is required
+            Name is required
         </div>
       </div>
       
       <div class="form-group">
-        <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" id="lastname" required
-        [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel">
-        <div [hidden]="lastname.valid || lastname.pristine"
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" required
+        [(ngModel)]="user.surname" name="surname" #surname="ngModel">
+        <div [hidden]="surname.valid || surname.pristine"
              class="alert alert-danger">
-            Last Name is required
+            Surname is required
         </div>
       </div>
       
       <div class="form-group">
-        <label for="age">Age</label>
-        <input type="number" class="form-control" id="age" required
-        [(ngModel)]="user.age" name="age" #age="ngModel">
-        <div [hidden]="age.valid || age.pristine"
+        <label for="info">Info</label>
+        <input type="text" class="form-control" id="info" required
+        [(ngModel)]="user.info" name="info" #info="ngModel">
+        <div [hidden]="info.valid || age.pristine"
              class="alert alert-danger">
-            Age is required
+            Info is required
         </div>
       </div>
 

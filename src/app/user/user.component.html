@@ -1,4 +1,4 @@
 <h5>All Users</h5>
 <div *ngFor="let cust of users ">
-  <a [routerLink]="['/users', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a>
+  <a [routerLink]="['/users', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.name }}</a>
 </div>
