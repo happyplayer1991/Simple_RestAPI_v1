@@ -5,8 +5,8 @@
    * run command prompt and go to 'C:\Program Files\postgres\9.6\bin'
    * run 'psql --username="postgres"' command
    * create database test;
-4. git clone https://github.com/freshcoderchan/Simple_RestAPI_v1.git
-5. You can DB settings(host, database, password table) and port in config/cofing.js file.
+4. Go to Project folder.
+5. You can change DB settings(host, database, password, table) and port in config/config.js file.
 6. run 'npm install' command in your downloded folder.
 7. run 'npm start'
 8. In your browser, you can on http://localhost:4200
