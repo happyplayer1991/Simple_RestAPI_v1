@@ -27,14 +27,14 @@ export class UserComponent  implements OnInit {
                   this.users = users
                  }
                 );
- }
+  }
 
- showLimitText(str) {
+  showLimitText(str) {
     return (str.length>10) ? str.substr(0,10) + '...' : str;
   }
 
   getDate(str) {
     var date = new Date(str);
-    return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+    return date.toISOString().slice(0,10);
   }
 }

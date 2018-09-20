@@ -14,6 +14,7 @@ export class AddUserComponent{
 
   user = new User();
   submitted = false;
+  message: string;
 
   constructor(
     private userService: UserService,
@@ -37,6 +38,6 @@ export class AddUserComponent{
   private save(): void {
     console.log(this.user);
     this.userService.addUser(this.user)
-        .subscribe();
+        .subscribe(result => this.message = "User Created Successfully!");
   }
 }

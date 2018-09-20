@@ -1,12 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*
+ ======================
+  font
+ ======================
+ */
 body {
+    /* font-family: 'Courier New', Times, serif !important; */
+    font-family: Arial,Helvetica,sans-serif !important;
+}
+
+/*
+ ======================
+  margin between buttons
+ ======================
+ */
+
+ul li, .btn-group .btn
+{
+    margin-right: 10px;
+}
+
+/*
+ ======================
+  font size in form
+ ======================
+ */
+form input, form textarea {
+    font-size: 14px !important;
+}
+
+/*
+ ======================
+  my-date-picker
+ ======================
+ */
+ my-date-picker {
+    display: block;
+ }
+
+ .mydp * {
     font-family: 'Courier New', Times, serif !important;
-}
+ }
 
-form button {
-    margin-right: 10px;
-}
+ /*
+ ======================
+  Table shows all users
+ ======================
+ */
+ 
+ th.id {
+    width: 50px !important;
+ }
 
-ul li {
-    margin-right: 10px;
-}
+ th.name, th.surname {
+    width: 100px !important;
+ }
+
+ th.birthday {
+    width: 110px !important;
+ }
+
+ th.info {
+    width: 160px !important;
+ }
