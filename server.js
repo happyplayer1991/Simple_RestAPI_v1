@@ -33,46 +33,23 @@ module.exports.seed = function () {
  
   let users = [
     {
-      firstname: "Joe",
-      lastname: "Thomas",
-      age: 36
+      name: "Jack",
+      surname: "Thomas",
+      date: '2018-03-29',
+      info: 'Perfect guy'
     },
     {
-      firstname: "Peter",
-      lastname: "Smith",
-      age: 18
+      name: "Andrey",
+      surname: "Iniesta",
+      date: '2018-04-10',
+      info: 'Cool guy'
     },
-    {
-      firstname: "Lauren",
-      lastname: "Taylor",
-      age: 31
-    },
-    {
-      firstname: "Mary",
-      lastname: "Taylor",
-      age: 24
-    },
-    {
-      firstname: "David",
-      lastname: "Moore",
-      age: 25
-    },
-    {
-      firstname: "Holly",
-      lastname: "Davies",
-      age: 27
-    },
-    {
-      firstname: "Michael",
-      lastname: "Brown",
-      age: 45
-    }
   ]
  
   // Init data -> save to MySQL
   const User = db.users;
   for (let i = 0; i < users.length; i++) { 
-    //User.create(users[i]);  
+    User.create(users[i]);  
   }
 }
 
