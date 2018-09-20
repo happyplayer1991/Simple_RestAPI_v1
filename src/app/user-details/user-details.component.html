@@ -37,7 +37,7 @@
         <textarea class="form-control" rows="5" id="info" placeholder="Give User's Info"
         required
         [(ngModel)]="user.info" name="info" #info="ngModel"></textarea>
-        <div [hidden]="info.valid || age.pristine"
+        <div [hidden]="info.valid || info.pristine"
              class="alert alert-danger">
             Info is required
         </div>
