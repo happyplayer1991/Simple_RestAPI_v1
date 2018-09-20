@@ -1,0 +1,52 @@
+<h3>Add User</h3>
+<div [hidden]="submitted">
+    <form #addUserForm="ngForm">
+
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Give User's FirstName" 
+        required
+        [(ngModel)]="user.firstname" name="firstname" #firstname="ngModel">
+        <div [hidden]="firstname.valid || firstname.pristine"
+             class="alert alert-danger">
+            First Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Give User's LastName"
+        required
+        [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel">
+        <div [hidden]="lastname.valid || lastname.pristine"
+             class="alert alert-danger">
+            Last Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" 
+        placeholder="Give User's Age"
+        required
+        [(ngModel)]="user.age" name="age" #age="ngModel">
+        <div [hidden]="age.valid || age.pristine"
+             class="alert alert-danger">
+            Age is required
+        </div>
+      </div>
+      
+      <div class="btn-group btn-group-sm">
+      	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+      	<button type="button" class="btn btn-dark" (click)="addUser()" [disabled]="!addUserForm.form.valid">Add</button>
+      </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{user.firstname}}  {{user.lastname}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    	<button type="button" class="btn btn-dark" (click)="newUser(); addUserForm.reset()">Continue</button>
+    </div>
+</div>
