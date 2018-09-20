@@ -39,17 +39,33 @@ form input, form textarea {
     display: block;
  }
 
- .mydp * {
-    font-family: 'Courier New', Times, serif !important;
- }
-
  /*
  ======================
   Table shows all users
  ======================
  */
+ table#users {
+    border-collapse: collapse;
+    width: 100%;
+ }
+
+ #users td, #users th {
+    border: 1px solid #ddd;
+    padding: 8px;
+ }
+ #users tr:nth-child(even){background-color: #f2f2f2;}
+
+ #users tr:hover {background-color: #ddd;}
  
- th.id {
+ #users th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #4CAF50;
+     color: white;
+ }
+
+ /* th.id {
     width: 50px !important;
  }
 
@@ -63,4 +79,4 @@ form input, form textarea {
 
  th.info {
     width: 160px !important;
- }
+ } */

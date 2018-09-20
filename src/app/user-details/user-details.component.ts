@@ -29,7 +29,7 @@ export class UserDetailsComponent implements OnInit {
         let birthday = new Date(user.birthday)
         delete user.birthday
         this.user = user
-        this.user.birthday = { date: {year: birthday.getFullYear(), month: birthday.getMonth(), day: birthday.getDay()} } 
+        this.user.birthday = { date: {year: birthday.getFullYear(), month: birthday.getMonth() + 1, day: birthday.getDate()} } 
       });
   }
 
