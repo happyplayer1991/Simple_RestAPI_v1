@@ -7,7 +7,7 @@
         <input type="text" class="form-control" id="name" placeholder="Give User's Name" 
         required
         [(ngModel)]="user.name" name="name" #name="ngModel">
-        <div [hidden]="name.valid || firstname.pristine"
+        <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
             Name is required
         </div>
@@ -43,7 +43,7 @@
 </div>
 
 <div [hidden]="!submitted">
-  <p>Submitted Successfully! -> <span class="badge badge-light">{{user.firstname}}  {{user.lastname}}</span></p>
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{user.name}}  {{user.surname}}</span></p>
 	<div class="btn-group btn-group-sm">
     	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
     	<button type="button" class="btn btn-dark" (click)="newUser(); addUserForm.reset()">Continue</button>
