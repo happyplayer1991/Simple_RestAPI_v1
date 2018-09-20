@@ -23,12 +23,24 @@
             Surname is required
         </div>
       </div>
-      
+
+      <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <my-date-picker name="birthday" [options]="{dateFormat: 'yyyy-mm-dd'}"
+          [(ngModel)]="user.birthday" required #birthday="ngModel"></my-date-picker>
+          <div [hidden]="birthday.valid || birthday.pristine"
+               class="alert alert-danger">
+              Birthday is required
+          </div>
+      </div>
+
+
+
       <div class="form-group">
         <label for="info">Info</label>
-        <input type="text" class="form-control" id="info" placeholder="Give User's Info"
+        <textarea class="form-control" rows="5" id="info" placeholder="Give User's Info"
         required
-        [(ngModel)]="user.info" name="info" #info="ngModel">
+        [(ngModel)]="user.info" name="info" #info="ngModel"></textarea>
         <div [hidden]="info.valid || info.pristine"
              class="alert alert-danger">
             Info is required
@@ -37,7 +49,7 @@
 
       <div class="btn-group btn-group-sm">
       	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-      	<button type="button" class="btn btn-dark" (click)="addUser()" [disabled]="!addUserForm.form.valid">Add</button>
+      	<button type="button" class="btn btn-primary" (click)="addUser()" [disabled]="!addUserForm.form.valid">Add</button>
       </div>
     </form>
 </div>
@@ -46,6 +58,6 @@
   <p>Submitted Successfully! -> <span class="badge badge-light">{{user.name}}  {{user.surname}}</span></p>
 	<div class="btn-group btn-group-sm">
     	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-    	<button type="button" class="btn btn-dark" (click)="newUser(); addUserForm.reset()">Continue</button>
+    	<button type="button" class="btn btn-success" (click)="newUser(); addUserForm.reset()">Continue</button>
     </div>
 </div>

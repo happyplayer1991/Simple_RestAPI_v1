@@ -35,13 +35,13 @@ module.exports.seed = function () {
     {
       name: "Jack",
       surname: "Thomas",
-      date: '2018-03-29',
+      birthday: '2018.03.29',
       info: 'Perfect guy'
     },
     {
       name: "Andrey",
       surname: "Iniesta",
-      date: '2018-04-10',
+      birthday: '2018.04.10',
       info: 'Cool guy'
     },
   ]

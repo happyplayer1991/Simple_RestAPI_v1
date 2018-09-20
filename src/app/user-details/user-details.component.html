@@ -22,9 +22,21 @@
       </div>
       
       <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="hidden" value="{{user.birthday}}">
+          <my-date-picker name="birthday" [options]="{dateFormat: 'yyyy-mm-dd'}"
+          [(ngModel)]="user.birthday" required #birthday="ngModel"></my-date-picker>
+          <div [hidden]="birthday.valid || birthday.pristine"
+               class="alert alert-danger">
+              Birthday is required
+          </div>
+      </div>
+
+      <div class="form-group">
         <label for="info">Info</label>
-        <input type="text" class="form-control" id="info" required
-        [(ngModel)]="user.info" name="info" #info="ngModel">
+        <textarea class="form-control" rows="5" id="info" placeholder="Give User's Info"
+        required
+        [(ngModel)]="user.info" name="info" #info="ngModel"></textarea>
         <div [hidden]="info.valid || age.pristine"
              class="alert alert-danger">
             Info is required
@@ -33,8 +45,8 @@
 
       <div class="btn-group btn-group-sm">
         <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-        <button type="button" class="btn btn-dark" (click)="update()" [disabled]="!detailUserForm.form.valid">Update</button>
-        <button type="button" class="btn btn-dark" (click)="delete()">Delete</button>
+        <button type="button" class="btn btn-success" (click)="update()" [disabled]="!detailUserForm.form.valid">Update</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
 	    </div>
     </form>
 </div>

@@ -2,13 +2,13 @@ const db = require('../../config/db.config.js');
 const User = db.users;
 
 // Post a User
-exports.create = (req, res) => {	
+exports.create = (req, res) => {
+	var data = req.body
+	data.birthday = data.birthday.formatted
+
+	// var birthday = req.body.birthday.date.year + '.' + req.body.birthday.date.month + '.' + req.body.birthday.date.day;	
 	// Save to PostgreSQL database
-	User.create({
-				"name": req.body.name, 
-				"surname": req.body.surname, 
-				"info": req.body.info
-			}).then(user => {		
+	User.create(data).then(user => {		
 			// Send created user to client
 			res.json(user);
 		}).catch(err => {
@@ -41,7 +41,9 @@ exports.findById = (req, res) => {
 // Update a User
 exports.update = (req, res) => {
 	const id = req.body.id;
-	User.update( req.body, 
+	var data = req.body
+	data.birthday = data.birthday.formatted
+	User.update( data, 
 			{ where: {id: id} }).then(() => {
 				res.status(200).json( { mgs: "Updated Successfully -> User Id = " + id } );
 			}).catch(err => {

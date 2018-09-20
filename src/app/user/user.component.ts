@@ -28,4 +28,13 @@ export class UserComponent  implements OnInit {
                  }
                 );
  }
+
+ showLimitText(str) {
+    return (str.length>10) ? str.substr(0,10) + '...' : str;
+  }
+
+  getDate(str) {
+    var date = new Date(str);
+    return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+  }
 }

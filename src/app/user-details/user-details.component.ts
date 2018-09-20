@@ -25,7 +25,12 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.userService.getUser(id)
-      .subscribe(user => this.user = user);
+      .subscribe(user => {
+        let birthday = new Date(user.birthday)
+        delete user.birthday
+        this.user = user
+        this.user.birthday = { date: {year: birthday.getFullYear(), month: birthday.getMonth(), day: birthday.getDay()} } 
+      });
   }
 
   update(): void {
@@ -43,4 +48,16 @@ export class UserDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  getFormattedDate(dt)  {
+    var date = new Date(dt);
+    var year = date.getFullYear();
+    var month = (1 + date.getMonth()).toString();
+    month = month.length > 1 ? month : '0' + month;
+    var day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+    return year + '-' + month + '-' + day;
+  }
+    
+  
 }

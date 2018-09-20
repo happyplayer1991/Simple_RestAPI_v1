@@ -11,6 +11,9 @@ import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { AddUserComponent } from './add-user/add-user.component';
 
+import { MyDatePickerModule } from 'mydatepicker'; //datepicker
+import {IMyDpOptions} from 'mydatepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +25,12 @@ import { AddUserComponent } from './add-user/add-user.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MyDatePickerModule //datepicker
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

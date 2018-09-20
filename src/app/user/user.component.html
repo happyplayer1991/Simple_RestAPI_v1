@@ -1,4 +1,30 @@
 <h5>All Users</h5>
-<div *ngFor="let cust of users ">
-  <a [routerLink]="['/users', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.name }}</a>
-</div>
+
+  <table class="users-table table-bordered responsive-table">
+      <thead>
+        <tr>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">First Name</th>
+            <th scope="col" class="text-center">Sur Name</th>
+            <th scope="col" class="text-center">Birthday</th>
+            <th scope="col" class="text-center">Info</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody id="users">
+          <tr *ngFor="let user of users ">
+            <td scope="col" class="text-center">{{user.id}}</td>
+            <td scope="col" class="text-center">{{user.name}}</td>
+            <td scope="col" class="text-center">{{user.surname}}</td>
+            <td scope="col" class="text-center">{{getDate(user.birthday)}}</td>
+            <td scope="col" class="text-center">{{showLimitText(user.info)}}</td>
+            <td scope="col" class="text-center">
+                <a [routerLink]="['/users', user.id]">
+                  <span class="badge badge-success">Edit</span>
+                </a>
+            </td>
+          </tr>
+      </tbody>
+  </table>
+
+

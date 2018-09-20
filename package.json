@@ -28,6 +28,7 @@
     "http-errors": "^1.7.1",
     "jquery": "^3.3.1",
     "morgan": "^1.9.1",
+    "mydatepicker": "^2.6.5",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "rxjs": "~6.2.0",
