@@ -1,6 +1,7 @@
 const config = {
-  dialect: 'postgres',
   host: 'localhost',
+  port: 4200,
+  dialect: 'postgres',
   database: 'test',
   username: 'postgres',
   password: 'coolcoder01',
