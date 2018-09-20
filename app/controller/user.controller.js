@@ -5,9 +5,9 @@ const User = db.users;
 exports.create = (req, res) => {	
 	// Save to PostgreSQL database
 	User.create({
-				"firstname": req.body.firstname, 
-				"lastname": req.body.lastname, 
-				"age": req.body.age
+				"name": req.body.name, 
+				"surname": req.body.surname, 
+				"info": req.body.info
 			}).then(user => {		
 			// Send created user to client
 			res.json(user);
