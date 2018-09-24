@@ -1,5 +1,6 @@
 export default {
-    host: 'localhost',
+    host: '127.0.0.1',
+    host_db: 'localhost',
     port: 5000,
     dialect: 'postgres',
     database: 'test',
