@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build && nodemon server",
+    "start": "cpx config/config.js src/app/config && cjs-to-es6 src/app/config/config.js && ng build && nodemon server",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

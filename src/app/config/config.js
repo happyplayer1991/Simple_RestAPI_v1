@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     host: 'localhost',
     port: 5000,
     dialect: 'postgres',

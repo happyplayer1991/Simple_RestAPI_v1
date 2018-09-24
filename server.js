@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
-const config = require('./config/config.js');
-const db = require('./config/db.config.js');
+const config = require('./config/config');
+const db = require('./config/db.config');
 
 /**
  * Init Local Variables
